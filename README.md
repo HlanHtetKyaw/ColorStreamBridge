@@ -5,7 +5,9 @@ https://jar-download.com/tags/purejavacomm
 https://opencv.org/releases/
 
 Since this project involves communication with a microcontroller, there is an accompanying .ino code file located at MicroControllerCode/serialTest.ino. (I used an Esp32 in my project, but you can use whatever microcontroller you prefer.)
+
 ****Don't forget to set the baud rate to 9600****
+
 SENDING DATA TO ARDUINO:
 I have written a method in the main file to send data, which will be printed as 'r', 'g', or 'b' to the Serial port.
 
