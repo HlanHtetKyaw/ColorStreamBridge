@@ -1,33 +1,13 @@
-This project doen't use any built tool. So, it might be a little challenging to set-up this project. But it is pretty easy
+This project doesn't use any build tool. So, it might be a little challenging to set up. However, it is pretty easy.
 
-download required library here
+Download the required libraries from the following links:
 https://jar-download.com/tags/purejavacomm
 https://opencv.org/releases/
 
-Since this is running through microcontroller, there should be arduino code. I also added ino file in 
-/////////////////////////////////////////////////////////////////////////////////////
-#include <ESP32Servo.h>
-Servo myservo;
+Since this project involves communication with a microcontroller, there is an accompanying .ino code file located at MicroControllerCode/serialTest.ino. (I used an Esp32 in my project, but you can use whatever microcontroller you prefer.)
 
-int servoPin = 18;
+SENDING DATA TO ARDUINO:
+I have written a method in the main file to send data, which will be printed as 'r', 'g', or 'b' to the Serial port.
 
-void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(9600);
-  myservo.attach(servoPin, 500, 2400);
-}
-void loop() {
-  // put your main code here, to run repeatedly:
-  if(Serial.available() > 0){
-    char receivedChar = Serial.read();
-    if(receivedChar == 'r'){
-      myservo.write(0);
-    } else if(receivedChar == 'g'){
-      myservo.write(90);
-    } else if(receivedChar == 'b'){
-      myservo.write(180);
-    }
-  }
-}
-/////////////////////////////////////////////////////////////////////////////////////
-
+CHECK SENSOR:
+There is also a checkSensor() method in the main file. If you plan to use a sensor such as ultrasonic or infrared and automate the capture process, you can uncomment the relevant code section.
